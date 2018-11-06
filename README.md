@@ -81,3 +81,19 @@ Anforderungen "zur Gaenze erfüllt"
 * Umsetzung eines Sicherheitskonzepts fuer die REST Schnittstelle
 
 
+# Durchführung
+Als erstes sollte man sich die Dokumentationen anschauen.
+Vorallem die Documentation zu `@RequestMapping`.
+Dort sieht man dann das man ein Argument `produces` setzen kann. Dies setzt in welchen Rückgabetypen 
+Spring das Objekt Transformiert. Zum beispiel:
+```java
+@RequestMapping(value = "/windengine/{windengineID}/data/json", produces = "application/json")
+```  
+Dies setzt den ausgabe wert von dem endpoint /data/json auf `json`
+
+Dannach habe ich das Verzeichnis `/public` erstellt um dort die öffentlichen Dateien zu speichern.
+Dies mach ich damit ich nicht dauernd neue Endpoints konfigurieren muss oder die Dateien laden.  
+In diesem Verzeichnis liegt die `index.html` wo die links zu den unterschiedliechen verzeichnissen liegen.  
+Dort gibt es das Unterverzeichniss `jquery` wo die Dateien für den jQuery-Client liegen.  
+
+Der JavaScript-Code ist da um die JSON Daten schön darzustellen.
