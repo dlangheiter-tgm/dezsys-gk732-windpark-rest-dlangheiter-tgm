@@ -29,10 +29,10 @@ public class WindengineController {
     @RequestMapping("/windengine")
     public ResponseEntity getWindengine(@CookieValue("auth") String token) {
         String ret = "This is the windengine application! (DEZSYS_GK72_WINDPARK) <br/><br/>\n" +
-                "<a href='http://localhost:8080/jquery/index.html'>Link to windengine/001/jquery/index.html</a><br/>\n" +
-                "<a href='http://localhost:8080/windengine/001/data/xml'>Link to windengine/001/data/xml</a><br/>\n" +
-                "<a href='http://localhost:8080/windengine/001/data/json'>Link to windengine/001/data/json</a><br/>\n" +
-                "<a href='http://localhost:8080/windengine/001/transfer'>Link to windengine/001/transfer</a><br/>";
+                "<a href='/jquery/index.html'>Link to windengine/001/jquery/index.html</a><br/>\n" +
+                "<a href='/windengine/001/data/xml'>Link to windengine/001/data/xml</a><br/>\n" +
+                "<a href='/windengine/001/data/json'>Link to windengine/001/data/json</a><br/>\n" +
+                "<a href='/windengine/001/transfer'>Link to windengine/001/transfer</a><br/>";
 
         return checkToken(token, ret);
     }
