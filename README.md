@@ -97,3 +97,20 @@ In diesem Verzeichnis liegt die `index.html` wo die links zu den unterschiedliec
 Dort gibt es das Unterverzeichniss `jquery` wo die Dateien für den jQuery-Client liegen.  
 
 Der JavaScript-Code ist da um die JSON Daten schön darzustellen.
+
+## Authentication
+Im nächsten schritt wollen wir ein Login einfügen.
+Skizze:
+![Secure](./secure.png)
+Basisprinzip: Wenn beim Login der User und das Password übereinstimmen generieren wir einen Token,
+welcher eine UUID ist, diesen senden wir dem Client mithilfe einen Cookies. Bei jeder Anfrage auf 
+eine Sichere seite wird überprüft ob der Token in der Liste der erlaubten Tokens ist. Wenn dies nicht
+der Fall ist senden wir einen 401 Unauthorized Fehler an den Client. Fals es den Token gibt senden wir
+die Daten.
+
+Es gibt auch eine /logout Seite, diese Löscht einfach nur den Token aus der Liste der Erlaubten Tokens 
+gelöscht und somit die weiteren Anfragen gestopt.
+
+Derzeit ist die Abfrage ob das Password richtig ist einfach nur ob es gleich mit dem Nutzernamen ist.
+In der zukunft kann man natürlich stärkere methoden wählen. Mann sollte das verfahren mit unverschlüsselten
+cookies *nicht* ohne https verwenden.
